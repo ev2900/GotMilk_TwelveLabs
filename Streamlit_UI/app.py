@@ -1,3 +1,7 @@
+#
+# streamlit run app.py
+#
+
 import streamlit as st
 import boto3
 from boto3.dynamodb.conditions import Key
