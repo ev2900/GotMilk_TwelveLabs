@@ -90,7 +90,38 @@ Resources:
   #
   # Lambda Function #1 - simple_checks_indexing
   #
+    DownloadJARsScriptLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: simple_checks_indexing
+      Handler: index.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Runtime: python3.14
+      Code:
+        ZipFile: |
+          import json
+          import urllib.parse
+          import boto3
+          import os
 
+          #from twelvelabs import TwelveLabs 
+          #from twelvelabs.tasks import TasksRetrieveResponse
+          
+          def lambda_handler(event, context):
+  
+                # Return lambda response
+                return {
+                  'statusCode': 200,
+                  'body': json.dumps('Lambda execution complete')
+                }          
+      Timeout: 300
+      MemorySize: 1024
+      EphemeralStorage: 
+        Size: 1024
+      Environment:
+        Variables:
+          API_KEY: ''
+          INDEX_ID: ''
   
   #
   # Lambda Function #2 - is_part_of_campaign 
