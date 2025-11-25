@@ -34,7 +34,7 @@ Resources:
         - AttributeName: 's3_path'
           KeyType: HASH   # partition key
 
-  isPartofCampaign:
+  milkMob:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: 'milk_mob'
