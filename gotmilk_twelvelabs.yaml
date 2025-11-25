@@ -18,6 +18,9 @@ Resources:
                   - Name: suffix
                     Value: .mp4
             Function: !GetAtt SimpleChecksIndexingLambda.Arn
+    DependsOn:
+      - SimpleChecksIndexingLambda
+      - S3InvokeLambdaPermission
 
   #
   # DyanmoDB Tables
@@ -160,7 +163,6 @@ Resources:
       FunctionName: !GetAtt SimpleChecksIndexingLambda.Arn
       Action: lambda:InvokeFunction
       Principal: s3.amazonaws.com
-      SourceArn: !GetAtt S3.Arn
   
   #
   # Lambda Function #2 - is_part_of_campaign 
