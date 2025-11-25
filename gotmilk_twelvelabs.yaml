@@ -120,8 +120,8 @@ Resources:
           import boto3
           import os
 
-          #from twelvelabs import TwelveLabs 
-          #from twelvelabs.tasks import TasksRetrieveResponse
+          from twelvelabs import TwelveLabs 
+          from twelvelabs.tasks import TasksRetrieveResponse
           
           def lambda_handler(event, context):
   
@@ -134,6 +134,8 @@ Resources:
       MemorySize: 1024
       EphemeralStorage: 
         Size: 1024
+      Layers:
+        - !Ref TwelveLabLambdaLayer
       Environment:
         Variables:
           API_KEY: ''
