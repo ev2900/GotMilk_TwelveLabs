@@ -1,1 +1,39 @@
+Description: Video analytics via. TwelveLabs APIs
 
+Resources:
+  #
+  # S3 Bucket
+  #
+  S3:
+    Type: AWS::S3::Bucket
+
+  #
+  # DyanmoDB Tables
+  #
+  simpleChecksindexing:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: 'simple_checks_indexing'
+      KeySchema:
+        - AttributeName: 's3_path'
+          KeyType: String   # partition key
+  
+  isPartofCampaign:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: 'is_part_of_campaign'
+      KeySchema:
+        - AttributeName: 's3_path'
+          KeyType: String   # partition key
+
+  isPartofCampaign:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: 'milk_mob'
+      KeySchema:
+        - AttributeName: 's3_path'
+          KeyType: String   # partition key
+
+  #
+  # S3 Vector
+  #
