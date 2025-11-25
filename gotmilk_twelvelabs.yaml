@@ -61,7 +61,7 @@ Resources:
           KeyType: HASH # partition key
       StreamSpecification:
         StreamViewType: NEW_AND_OLD_IMAGES
-
+            
   MilkMob:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -73,6 +73,8 @@ Resources:
       KeySchema:
         - AttributeName: s3_path
           KeyType: HASH # partition key
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
 
   #
   # S3 Vector
