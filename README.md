@@ -13,9 +13,15 @@ I built a solution that solves a fictitious scenario. The scenario:
 
 # Architecture
 
+
+
 # Deploying the Solution on AWS
+
+Click the button below to deploy the [gotmilk_twelvelabs.yaml](https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/gotmilk_twelvelabs.yaml) CloudFormation. This will deploy all of the components pictured in the architecture.
 
 > [!WARNING]
 > The CloudFormation stack creates IAM role(s) that have ADMIN permissions. This is not appropriate for production deployments. Scope these roles down before using this CloudFormation in productio
 
 [![Launch CloudFormation Stack](https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=gotmilk-twelvelabs&templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/gotmilk_twelvelabs.yaml)
+
+
