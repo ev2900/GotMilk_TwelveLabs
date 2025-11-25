@@ -35,15 +35,23 @@ The architecture has 3 major sections which can be conceptualized via. the lambd
     * When the lambda triggers it will call the TwelveLabs API to generate titles, topics, hashtags and write this output to the DynamoDB table milk_mob
     * The Lambda will also trigger an API call to get an embedding of the .mp4 and load the visual-video embedding to an S3 vector index  
 
-There is a user interface that will let you easily see the content of the DynamoDB tables and run vector search agains the S3 vector bucket index. This is hosted via. Streamlite on your localhost. The code for this UI is [HERE[(https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Streamlit_UI/app.py). Instructions to host the UI are at the end of the [Deploying the Solution](https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Streamlit_UI/app.py). 
+There is a user interface that will let you easily see the content of the DynamoDB tables and run vector search against the S3 vector bucket index. This is hosted via. Streamlite on your localhost. The code for this UI is [HERE[(https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Streamlit_UI/app.py). Instructions to host the UI are at the end of the [Deploying the Solution](https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Streamlit_UI/app.py). 
 
 # Deploying the Solution
 
 Click the button below to deploy the [gotmilk_twelvelabs.yaml](https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/gotmilk_twelvelabs.yaml) CloudFormation. This will deploy all of the components pictured in the architecture.
 
 > [!WARNING]
-> The CloudFormation stack creates IAM role(s) that have ADMIN permissions. This is not appropriate for production deployments. Scope these roles down before using this CloudFormation in productio
+> The CloudFormation stack creates IAM role(s) that have ADMIN permissions. This is not appropriate for production deployments. Scope these roles down before using this CloudFormation in production
 
 [![Launch CloudFormation Stack](https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=gotmilk-twelvelabs&templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/gotmilk_twelvelabs.yaml)
+
+The following video demonstrates the process of deploying the CloudFormation stack, creating the resources depicted in the architecture
+
+<a href="[https://youtu.be/yourvideoid](https://youtu.be/AnAxwACr-jU)"><img src="https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/README/deploy.png" width="600" alt="Demonstration Deploying the Solution"></a>
+
+# Running the Solution
+
+# Running the User Interface
 
 
