@@ -54,6 +54,12 @@ The following video demonstrates the process of deploying the CloudFormation sta
 
 # Running the Solution
 
+The following video demonstrates the process of uploading a sample video to the solution and it processing it
+
+<a href="https://youtu.be/GiXy8xImcls">
+  <img src="https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/README/running.png" width="550" alt="Running the Solution">
+</a>
+
 # Running the User Interface
 
 
