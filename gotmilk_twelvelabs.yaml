@@ -45,6 +45,8 @@ Resources:
       KeySchema:
         - AttributeName: s3_path
           KeyType: HASH # partition key
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
   
   IsPartofCampaign:
     Type: AWS::DynamoDB::Table
@@ -57,6 +59,8 @@ Resources:
       KeySchema:
         - AttributeName: s3_path
           KeyType: HASH # partition key
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
 
   MilkMob:
     Type: AWS::DynamoDB::Table
