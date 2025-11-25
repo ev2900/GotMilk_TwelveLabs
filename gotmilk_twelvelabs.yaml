@@ -60,7 +60,7 @@ Resources:
       IndexName: visual-video
       Dimension: 512     
       DistanceMetric: cosine
-      VectorBucketArn: !Fn::GetAtt S3Vector.VectorBucketArn
+      VectorBucketArn: !GetAtt S3Vector.VectorBucketArn
 
   #
   # Lambda Function IAM role
