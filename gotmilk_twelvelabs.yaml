@@ -100,7 +100,7 @@ Resources:
         - 'python3.14'
       Content: 
         S3Bucket: 'sharkech-public'
-        S3Key: '/misc-public/twelvelabs-layer.zip'
+        S3Key: 'misc-public/twelvelabs-layer.zip'
       LicenseInfo: String
                 
   #
