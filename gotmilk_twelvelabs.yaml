@@ -396,7 +396,7 @@ Resources:
   MilkMob:
     Type: AWS::Lambda::Function
     Properties:
-      FunctionName: milk_mob 
+      FunctionName: 'milk_mob' 
       Handler: index.lambda_handler
       Role: !GetAtt LambdaExecutionRole.Arn
       Runtime: python3.14
