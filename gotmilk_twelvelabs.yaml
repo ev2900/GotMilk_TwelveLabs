@@ -73,8 +73,6 @@ Resources:
       KeySchema:
         - AttributeName: s3_path
           KeyType: HASH # partition key
-      StreamSpecification:
-        StreamViewType: NEW_AND_OLD_IMAGES
 
   #
   # S3 Vector
@@ -393,7 +391,7 @@ Resources:
   #
   # Lambda Function #3 - milk_mob
   #
-  MilkMob:
+  TitleTopicHastagsEmbeddings:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: title_topic_hastags_embeddings 
@@ -534,10 +532,10 @@ Resources:
         Variables:
           API_KEY: !Ref TwelveLabAPIKey
 
-  DynamoDBTriggerMilkMob:
+  DynamoDBTriggerTitleTopicHastagsEmbeddings:
     Type: AWS::Lambda::EventSourceMapping
     Properties:
       EventSourceArn: !GetAtt IsPartofCampaign.StreamArn
-      FunctionName: !Ref MilkMob
+      FunctionName: !Ref TitleTopicHastagsEmbeddings
       StartingPosition: LATEST # Or TRIM_HORIZON
       BatchSize: 1 # Number of records to process in a batch
