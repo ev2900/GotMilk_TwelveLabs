@@ -6,6 +6,27 @@ Resources:
   #
   S3:
     Type: AWS::S3::Bucket
+    Properties:
+      NotificationConfiguration:
+        LambdaConfigurations:
+          - Event: s3:ObjectCreated:Put
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: milk/
+                  - Name: suffix
+                    Value: .mp4
+            Function: !GetAtt SimpleChecksIndexingLambda.Arn
+
+    # S3 premisions for the Lambda event trigger
+    S3InvokeLambdaPermission:
+      Type: AWS::Lambda::Permission
+      Properties:
+        FunctionName: !GetAtt MyLambdaFunction.Arn
+        Action: lambda:InvokeFunction
+        Principal: s3.amazonaws.com
+        SourceArn: !GetAtt MyS3Bucket.Arn
 
   #
   # DyanmoDB Tables
