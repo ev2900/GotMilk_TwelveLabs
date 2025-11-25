@@ -86,6 +86,21 @@ Resources:
                 Action: 
                   - '*'
                 Resource: '*'
+
+  #
+  # Lambda Layer w/ Twelve Labs Libraries
+  #
+  Type: AWS::Lambda::LayerVersion
+    Properties:
+      LayerName: twelvelabs-layer
+      CompatibleArchitectures: 
+        - 'x86_64'
+      CompatibleRuntimes: 
+        - 'python3.14'
+      Content: 
+        S3Bucket: 'sharkech-public'
+        S3Key: '/misc-public/twelvelabs-layer.zip'
+      LicenseInfo: String
                 
   #
   # Lambda Function #1 - simple_checks_indexing
