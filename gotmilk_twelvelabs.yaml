@@ -90,7 +90,8 @@ Resources:
   #
   # Lambda Layer w/ Twelve Labs Libraries
   #
-  Type: AWS::Lambda::LayerVersion
+  TwelveLabLambdaLayer
+    Type: AWS::Lambda::LayerVersion
     Properties:
       LayerName: twelvelabs-layer
       CompatibleArchitectures: 
