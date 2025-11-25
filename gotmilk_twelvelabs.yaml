@@ -376,13 +376,13 @@ Resources:
         Variables:
           API_KEY: !Ref TwelveLabAPIKey
 
-    DynamoDBTriggerIsPartOfCampaign:
-      Type: AWS::Lambda::EventSourceMapping
-      Properties:
-        EventSourceArn: !GetAtt SimpleChecksIndexing.StreamArn
-        FunctionName: !Ref IsPartOfCampaign
-        StartingPosition: LATEST # Or TRIM_HORIZON
-        BatchSize: 1 # Number of records to process in a batch
+  DynamoDBTriggerIsPartOfCampaign:
+    Type: AWS::Lambda::EventSourceMapping
+    Properties:
+      EventSourceArn: !GetAtt SimpleChecksIndexing.StreamArn
+      FunctionName: !Ref IsPartOfCampaign
+      StartingPosition: LATEST # Or TRIM_HORIZON
+      BatchSize: 1 # Number of records to process in a batch
 
   #
   # Lambda Function #3 - milk_mob
