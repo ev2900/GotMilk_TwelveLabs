@@ -1,5 +1,14 @@
 Description: Video analytics via. TwelveLabs APIs
 
+Parameters:
+  TwelveLabAPIKey:
+    Type: String
+    Description: API key for TwelveLabs.
+
+  TwelveLabIndexId:
+    Type: String
+    Description: Index ID from TwelveLabs.
+
 Resources:
   #
   # S3 Bucket
@@ -243,8 +252,8 @@ Resources:
         - !Ref TwelveLabLambdaLayer
       Environment:
         Variables:
-          API_KEY: ''
-          INDEX_ID: ''
+          API_KEY: !Ref TwelveLabAPIKey
+          INDEX_ID: !Ref TwelveLabIndexId
 
   # S3 premisions for the Lambda event trigger
   S3InvokeLambdaPermission:
