@@ -21,18 +21,18 @@ Resources:
   
   isPartofCampaign:
     Type: AWS::DynamoDB::Table
-    BillingMode: PAY_PER_REQUEST
     Properties:
       TableName: 'is_part_of_campaign'
+      BillingMode: PAY_PER_REQUEST
       KeySchema:
         - AttributeName: 's3_path'
           KeyType: String   # partition key
 
   isPartofCampaign:
     Type: AWS::DynamoDB::Table
-    BillingMode: PAY_PER_REQUEST
     Properties:
       TableName: 'milk_mob'
+      BillingMode: PAY_PER_REQUEST
       KeySchema:
         - AttributeName: 's3_path'
           KeyType: String   # partition key
