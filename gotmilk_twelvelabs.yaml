@@ -90,7 +90,7 @@ Resources:
   #
   # Lambda Function #1 - simple_checks_indexing
   #
-    DownloadJARsScriptLambdaFunction:
+  SimpleChecksIndexingLambda:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: simple_checks_indexing
