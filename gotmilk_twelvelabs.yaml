@@ -18,15 +18,8 @@ Resources:
                   - Name: suffix
                     Value: .mp4
             Function: !GetAtt SimpleChecksIndexingLambda.Arn
-
-    # S3 premisions for the Lambda event trigger
-    S3InvokeLambdaPermission:
-      Type: AWS::Lambda::Permission
-      Properties:
-        FunctionName: !GetAtt MyLambdaFunction.Arn
-        Action: lambda:InvokeFunction
-        Principal: s3.amazonaws.com
-        SourceArn: !GetAtt MyS3Bucket.Arn
+      DependsOn:
+        - LambdaPermissionForS3Invoke
 
   #
   # DyanmoDB Tables
@@ -161,6 +154,15 @@ Resources:
         Variables:
           API_KEY: ''
           INDEX_ID: ''
+
+  # S3 premisions for the Lambda event trigger
+  S3InvokeLambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !GetAtt MyLambdaFunction.Arn
+      Action: lambda:InvokeFunction
+      Principal: s3.amazonaws.com
+      SourceArn: !GetAtt MyS3Bucket.Arn
   
   #
   # Lambda Function #2 - is_part_of_campaign 
