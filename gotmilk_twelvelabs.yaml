@@ -159,10 +159,10 @@ Resources:
   S3InvokeLambdaPermission:
     Type: AWS::Lambda::Permission
     Properties:
-      FunctionName: !GetAtt MyLambdaFunction.Arn
+      FunctionName: !GetAtt SimpleChecksIndexingLambda.Arn
       Action: lambda:InvokeFunction
       Principal: s3.amazonaws.com
-      SourceArn: !GetAtt MyS3Bucket.Arn
+      SourceArn: !GetAtt S3.Arn
   
   #
   # Lambda Function #2 - is_part_of_campaign 
