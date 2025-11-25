@@ -58,6 +58,7 @@ Resources:
     Type: AWS::S3Vectors::Index
     Properties:
       IndexName: visual-video
+      DataType: float32
       Dimension: 512     
       DistanceMetric: cosine
       VectorBucketArn: !GetAtt S3Vector.VectorBucketArn
