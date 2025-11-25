@@ -48,7 +48,9 @@ Click the button below to deploy the [gotmilk_twelvelabs.yaml](https://github.co
 
 The following video demonstrates the process of deploying the CloudFormation stack, creating the resources depicted in the architecture
 
-<a href="[https://youtu.be/yourvideoid](https://youtu.be/AnAxwACr-jU)"><img src="https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/README/deploy.png" width="600" alt="Demonstration Deploying the Solution"></a>
+<a href="https://youtu.be/AnAxwACr-jU">
+  <img src="https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/README/deploy.png" width="600" alt="Demonstration Deploying the Solution">
+</a>
 
 # Running the Solution
 
