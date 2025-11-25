@@ -18,6 +18,7 @@ Resources:
                   - Name: suffix
                     Value: .mp4
             Function: !GetAtt SimpleChecksIndexingLambda.Arn
+    DependsOn: S3InvokeLambdaPermission  
 
   #
   # DyanmoDB Tables
