@@ -62,4 +62,8 @@ The following video demonstrates the process of uploading a sample video to the 
 
 # Running the User Interface
 
+The following video demonstrates the process of running the Streamlit user interface to view the DynamoDB tables and run a vector search against S3 vector index
 
+<a href="https://youtu.be/CaCZtWn8R4U">
+  <img src="https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/README/userinterface.png" width="550" alt="Running the Solution">
+</a>
