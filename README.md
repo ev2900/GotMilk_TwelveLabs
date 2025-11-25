@@ -13,7 +13,7 @@ I built a solution that solves a fictitious scenario. The scenario:
 
 # Architecture
 
-
+<img width="700" alt="quick_setup" src="https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/README/architecture.png">
 
 # Deploying the Solution on AWS
 
