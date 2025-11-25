@@ -1,10 +1,10 @@
 # GotMilk? TwelveLabs
 
-<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-000-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-000-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-011-green">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-104-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-000-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-011-green">
 
 # Overview
 
-I wanted to explore [TwelveLabs](https://www.twelvelabs.io/) capabilities to work with videos. 
+I wanted to explore [TwelveLabs](https://www.twelvelabs.io/) capabilities to work with videos.
 
 I built a solution that solves a fictitious scenario. The scenario:
 * A Brand Partnership division is partnering with a brand to re-create a modern version of the iconic got milk? Campaign.
@@ -23,19 +23,19 @@ The architecture has 3 major sections which can be conceptualized via. the lambd
    * When the lambda triggers it will first open the associated .json file and check the metadata for either the #gotmilk? or #milkmob hashtag
    * IF the #gotmilk? or #milkmob hashtags are present a presigned URL is generated for the .mp4
    * The presigned URL is then used to send a TwelveLabs API call to index the video on an existing TweveLabs video index
-   * After the video is successfully indexed a record is added to DynamoDB table simple_checks_indexing. The DynamoDB table includes the videoID from the TweveLabs index 
- 
+   * After the video is successfully indexed a record is added to DynamoDB table simple_checks_indexing. The DynamoDB table includes the videoID from the TweveLabs index
+
 2. The second lambda function is [is_part_of_campaign](https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Lambda_Functions/is_part_of_campaign.py)
    * The lambda function is trigger by a record being inserted into the DynamoDB table simple_checks_indexing
-   * When the lambda triggers it will use the TweveLabs API to prompt the video with 3 question "Is drinking milk depicted in the video? Answer Yes or No.", "Does the text got milk? appear in the video? Answer Yes or No.", "Are the words 'milk' or the phrase 'got milk' spoken in the audio? Answer Yes or No." 
+   * When the lambda triggers it will use the TweveLabs API to prompt the video with 3 question "Is drinking milk depicted in the video? Answer Yes or No.", "Does the text got milk? appear in the video? Answer Yes or No.", "Are the words 'milk' or the phrase 'got milk' spoken in the audio? Answer Yes or No."
    * If 2/3 prompts return Yes a recorded is added to the DynamoDB table is_part_of_campaign
 
-3. The third lambda function is [title_topic_hastags_embeddings](https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Lambda_Functions/title_topic_hastags_embeddings.py)  
+3. The third lambda function is [title_topic_hastags_embeddings](https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Lambda_Functions/title_topic_hastags_embeddings.py)
     * The lambda function is trigger by a record being inserted into the DynamoDB table is_part_of_campaign
     * When the lambda triggers it will call the TwelveLabs API to generate titles, topics, hashtags and write this output to the DynamoDB table milk_mob
-    * The Lambda will also trigger an API call to get an embedding of the .mp4 and load the visual-video embedding to an S3 vector index  
+    * The Lambda will also trigger an API call to get an embedding of the .mp4 and load the visual-video embedding to an S3 vector index
 
-There is a user interface that will let you easily see the content of the DynamoDB tables and run vector search against the S3 vector bucket index. This is hosted via. Streamlite on your localhost. The code for this UI is [HERE[(https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Streamlit_UI/app.py). Instructions to host the UI are at the end of the [Deploying the Solution](https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Streamlit_UI/app.py). 
+There is a user interface that will let you easily see the content of the DynamoDB tables and run vector search against the S3 vector bucket index. This is hosted via. Streamlite on your localhost. The code for this UI is [HERE[(https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Streamlit_UI/app.py). Instructions to host the UI are at the end of the [Deploying the Solution](https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/Streamlit_UI/app.py).
 
 # Deploying the Solution
 
