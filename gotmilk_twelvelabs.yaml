@@ -10,42 +10,92 @@ Resources:
   #
   # DyanmoDB Tables
   #
-  simpleChecksindexing:
+  SimpleChecksIndexing:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: 'simple_checks_indexing'
+      TableName: simple_checks_indexing
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
         - AttributeName: s3_path
-          AttributeType: S        # String attribute
+          AttributeType: S # string attribute
       KeySchema:
-        - AttributeName: 's3_path'
-          KeyType: HASH   # partition key
+        - AttributeName: s3_path
+          KeyType: HASH # partition key
   
-  isPartofCampaign:
+  IsPartofCampaign:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: 'is_part_of_campaign'
+      TableName: is_part_of_campaign
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
         - AttributeName: s3_path
-          AttributeType: S        # String attribute
+          AttributeType: S # string attribute
       KeySchema:
-        - AttributeName: 's3_path'
-          KeyType: HASH   # partition key
+        - AttributeName: s3_path
+          KeyType: HASH # partition key
 
-  milkMob:
+  MilkMob:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: 'milk_mob'
+      TableName: milk_mob
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
         - AttributeName: s3_path
-          AttributeType: S        # String attribute
+          AttributeType: S # string attribute
       KeySchema:
-        - AttributeName: 's3_path'
-          KeyType: HASH   # partition key
+        - AttributeName: s3_path
+          KeyType: HASH # partition key
 
   #
   # S3 Vector
   #
+  S3Vector:
+    Type: AWS::S3Vectors::VectorBucket
+    Properties:
+      VectorBucketName: got-milk
+
+  S3Index:
+    Type: AWS::S3Vectors::Index
+    Properties:
+      IndexName: visual-video
+      Dimension: 512     
+      DistanceMetric: cosine
+      VectorBucketArn: !Fn::GetAtt S3Vector.VectorBucketArn
+
+  #
+  # Lambda Function IAM role
+  #
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: "sts:AssumeRole"
+      Policies:
+        # Imporvement required - premissions need to be scoped down
+        - PolicyName: Admin
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: 
+                  - '*'
+                Resource: '*'
+                
+  #
+  # Lambda Function #1 - simple_checks_indexing
+  #
+
+  
+  #
+  # Lambda Function #2 - is_part_of_campaign 
+  #
+
+  #
+  # Lambda Function #3 - milk_mob
+  #
+  
