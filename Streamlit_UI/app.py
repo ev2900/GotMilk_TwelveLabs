@@ -104,7 +104,7 @@ for item in milk_mob_data:
 
 df = pd.DataFrame(rows)
 
-st.subheader("Videos that ARE a part of the Got Milk? campaign")
+st.subheader("Generated information about the Got Milk? videos")
 st.write("For the videos that are part of the Got Milk? campaign, TwelveLabs is used to create a title, identify the primary topic and hashtags.")
 st.write("Additionally, behind the scenes an embedding is created for each video to power the similarity search in next step.")
 st.dataframe(df, width='stretch', hide_index=True)
