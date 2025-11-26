@@ -47,6 +47,8 @@ Click the button below to deploy the [gotmilk_twelvelabs.yaml](https://github.co
 
 [![Launch CloudFormation Stack](https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=gotmilk-twelvelabs&templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/gotmilk_twelvelabs.yaml)
 
+The CloudFormation stack will ask for two inputs. An API key for TwelveLabs and the ID of an index that you will need to precreate. The easiest way to create an API key and index is via. the [TwelveLabs playground](https://playground.twelvelabs.io/).
+
 The following video demonstrates the process of deploying the CloudFormation stack, creating the resources depicted in the architecture
 
 <a href="https://youtu.be/AnAxwACr-jU">
@@ -55,7 +57,7 @@ The following video demonstrates the process of deploying the CloudFormation sta
 
 # Running the Solution
 
-The following video demonstrates the process of uploading a sample video to the solution and processing the content
+The following video demonstrates the process of uploading a sample video to the solution and processing the content. 
 
 <a href="https://youtu.be/GiXy8xImcls">
   <img src="https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/README/running.png" width="550" alt="Running the Solution">
