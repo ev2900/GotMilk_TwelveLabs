@@ -1,6 +1,6 @@
 # GotMilk? TwelveLabs
 
-<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-05-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-025-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-003-green">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-107-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-025-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-003-green">
 
 
 # Overview
@@ -57,7 +57,7 @@ The following video demonstrates the process of deploying the CloudFormation sta
 
 # Running the Solution
 
-The following video demonstrates the process of uploading a sample video to the solution and processing the content. 
+The following video demonstrates the process of uploading a sample video to the solution and processing the content.
 
 <a href="https://youtu.be/GiXy8xImcls">
   <img src="https://github.com/ev2900/GotMilk_TwelveLabs/blob/main/README/running.png" width="550" alt="Running the Solution">
