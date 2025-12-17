@@ -1,6 +1,6 @@
 # GotMilk? TwelveLabs
 
-<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-107-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-437-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-006-green">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-107-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-451-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-006-green">
 
 
 # Overview
