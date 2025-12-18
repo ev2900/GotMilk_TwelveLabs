@@ -2,7 +2,6 @@
 
 <img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-107-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-451-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-015-green">
 
-
 # Overview
 
 I wanted to explore [TwelveLabs](https://www.twelvelabs.io/) capabilities to work with videos.
